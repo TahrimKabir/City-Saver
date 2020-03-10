@@ -8,19 +8,19 @@ public class Assets {
 private static final int  width = 64 , height = 64 ;
 
 	
-	public static BufferedImage playerL , playerR,playerD,playerU , grass , water , ice , brickWall , steelWall , Base , Blank   ;
+	public static BufferedImage playerLeft , playerRight,playerDown,playerUp , grass , water , ice , brickWall , steelWall , Base , Blank   ;
 	
 	
 	
 public static void init() {
 		
-playerU = ImageLoader.loadImage("/Creature/tankU.gif");
+playerUp = ImageLoader.loadImage("/Creature/tankU.gif");
 		
-playerD = ImageLoader.loadImage("/Creature/tankD.gif");
+playerDown = ImageLoader.loadImage("/Creature/tankD.gif");
 		
-playerL = ImageLoader.loadImage("/Creature/tankL.gif");
+playerLeft = ImageLoader.loadImage("/Creature/tankL.gif");
 		
-playerR = ImageLoader.loadImage("/Creature/tankR.gif");
+playerRight = ImageLoader.loadImage("/Creature/tankR.gif");
 		
 grass =ImageLoader.loadImage("/Textures/tree.gif");
 		

@@ -14,20 +14,36 @@ public class GameCamera {
 		this.yOffset = yOffset;
 	}
 	
+	public void XoffSet() {
+		float temp = handler.getWorld().getWidth()*Tile.TILEWIDTH - handler.getWidth();
+		xyOffset(xOffset, temp);
+		
+//		if(xOffset>handler.getWorld().getWidth()*Tile.TILEWIDTH - handler.getWidth()) {
+//			xOffset = handler.getWorld().getWidth()*Tile.TILEWIDTH - handler.getWidth();
+//		}
+	}
+	
+	public void Yoffset() {
+		float tempr = handler.getWorld().getHeight()*Tile.TILEHEIGHT - handler.getHeight();
+		xyOffset(yOffset, tempr);
+		// if(yOffset>handler.getWorld().getHeight()*Tile.TILEHEIGHT - handler.getHeight()) {
+		//	yOffset = handler.getWorld().getHeight()*Tile.TILEHEIGHT - handler.getHeight();
+		//}
+	}
+	
+	public void xyOffset(float Offset, float value) {
+		if(Offset<0) {
+			Offset=0;
+		} else if (Offset > value) {
+			Offset = value;
+		}
+		
+	}
 	
 	public void CheckBlankSpace() {
-		if(xOffset<0) {
-			xOffset = 0;
-		}
-		else if(xOffset>handler.getWorld().getWidth()*Tile.TILEWIDTH - handler.getWidth()) {
-			xOffset = handler.getWorld().getWidth()*Tile.TILEWIDTH - handler.getWidth();
-		}
-		if(yOffset<0) {
-			yOffset = 0;
-		}
-		else if(yOffset>handler.getWorld().getHeight()*Tile.TILEHEIGHT - handler.getHeight()) {
-			yOffset = handler.getWorld().getHeight()*Tile.TILEHEIGHT - handler.getHeight();
-		}
+		XoffSet();
+		YoffSet();
+		
 	}
 	
 	public void move(float xAmt, float yAmt) {
